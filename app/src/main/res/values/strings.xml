@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">SQLiteCRUDExample</string>
-
     <array name="departments">
         <item>Technical</item>
         <item>Support</item>
@@ -8,5 +6,7 @@
         <item>Marketing</item>
         <item>Human Resource</item>
     </array>
+
+    <string name="app_name">SQLiteCRUDExample</string>
 
 </resources>
