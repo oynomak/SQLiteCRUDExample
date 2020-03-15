@@ -2,10 +2,16 @@ package edu.oynomak.sqlitecrudexample;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,5 +65,4 @@ public class EmployeeActivity extends AppCompatActivity {
         //adding the adapter to listview
         listViewEmployees.setAdapter(adapter);
     }
-
 }
