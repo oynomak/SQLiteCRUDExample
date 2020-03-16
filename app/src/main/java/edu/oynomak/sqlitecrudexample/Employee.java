@@ -2,9 +2,9 @@ package edu.oynomak.sqlitecrudexample;
 
 public class Employee {
 
-    int id;
-    String name, dept, joiningDate;
-    double salary;
+    private int id;
+    private String name, dept, joiningDate;
+    private double salary;
 
     public Employee(int id, String name, String dept, String joiningDate, double salary) {
         this.id = id;
