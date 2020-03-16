@@ -80,7 +80,7 @@ public class EmployeeAdapter  extends ArrayAdapter<Employee> {
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        String sql = "DELETE FROM employee WHERE id = ?";
+                        String sql = "DELETE FROM employee WHERE _id = ?";
                         mDatabase.execSQL(sql, new Integer[]{employee.getId()});
                         reloadEmployeesFromDatabase();
                     }
@@ -140,7 +140,7 @@ public class EmployeeAdapter  extends ArrayAdapter<Employee> {
                         "SET name = ?, \n" +
                         "department = ?, \n" +
                         "salary = ? \n" +
-                        "WHERE id = ?;\n";
+                        "WHERE _id = ?;\n";
 
                 mDatabase.execSQL(sql, new String[]{name, dept, salary, String.valueOf(employee.getId())});
                 Toast.makeText(mCtx, "Employee Updated", Toast.LENGTH_SHORT).show();
