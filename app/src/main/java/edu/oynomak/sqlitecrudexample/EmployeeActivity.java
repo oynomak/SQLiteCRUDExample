@@ -39,7 +39,7 @@ public class EmployeeActivity extends AppCompatActivity {
 
     private void showEmployeesFromDatabase() {
 
-        //we used rawQuery(sql, selectionargs) for fetching all the employees
+        //we used rawQuery(sql, selectionArgs) for fetching all the employees
         Cursor cursorEmployees = mDatabase.rawQuery("SELECT * FROM employee", null);
 
         //if the cursor has some data
@@ -62,7 +62,7 @@ public class EmployeeActivity extends AppCompatActivity {
         //creating the adapter object
         adapter = new EmployeeAdapter(this, R.layout.list_layout_employee, employeeList,mDatabase);
 
-        //adding the adapter to listview
+        //adding the adapter to ListView
         listViewEmployees.setAdapter(adapter);
     }
 }
