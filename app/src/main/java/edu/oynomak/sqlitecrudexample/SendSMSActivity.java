@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
@@ -35,26 +36,29 @@ public class SendSMSActivity extends AppCompatActivity {
 
                 try {
                     // --- Getting intent and PendingIntent instance ---
-                    Intent intent = new Intent(getApplicationContext(),SendSMSActivity.class);
-                    PendingIntent pi = PendingIntent.getActivity(getApplicationContext(), 0, intent,0);
+                    /*Intent intent = new Intent(getApplicationContext(),SendSMSActivity.class);
+                    PendingIntent pi = PendingIntent.getActivity(getApplicationContext(), 0, intent,0);*/
 
                     // --- Using Intent + startActivity() ---
-                    /*Intent sendIntent = new Intent(Intent.ACTION_SENDTO);
+                    //*
+                    Intent sendIntent = new Intent(getApplicationContext(),SendSMSActivity.class);
                     sendIntent.putExtra("sms_body", smsBody);
+                    //sendIntent.setData(Uri.parse("smsto:"));
                     sendIntent.putExtra("address", phoneNo);
                     sendIntent.setType("vnd.android-dir/mms-sms");
-                    startActivity(sendIntent);*/
+                    startActivity(sendIntent);
+                    //*/
 
                     // Check self permission
                     //checkSelfPermission();
 
 
                     //Get the SmsManager instance and call the sendTextMessage method to send message
-                    SmsManager smsManager = SmsManager.getDefault();
+                    //SmsManager smsManager = SmsManager.getDefault();
 
                     //smsManager.sendTextMessage(phoneNo, null, sms, null, null);
-                    smsManager.sendTextMessage(phoneNo, null, smsBody, pi,null);
-                    Toast.makeText(getApplicationContext(), "SMS Sent!",
+                    //smsManager.sendTextMessage(phoneNo, null, smsBody, pi,null);
+                    Toast.makeText(getApplicationContext(), "SMS Sent to: "+ phoneNo +" was: \n <<"+smsBody+">>",
                             Toast.LENGTH_LONG).show();
                 } catch (Exception e) {
                     Toast.makeText(getApplicationContext(),
