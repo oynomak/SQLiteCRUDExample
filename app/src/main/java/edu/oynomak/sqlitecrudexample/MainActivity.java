@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static final String DATABASE_NAME = "employeedb";
 
-    TextView textViewViewEmployees;
+    TextView textViewViewEmployees, textSendSms;
     EditText editTextName, editTextSalary;
     Spinner spinnerDepartment;
 
@@ -33,9 +33,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextName = (EditText) findViewById(R.id.editTextName);
         editTextSalary = (EditText) findViewById(R.id.editTextSalary);
         spinnerDepartment = (Spinner) findViewById(R.id.spinnerDepartment);
+        textSendSms = (TextView) findViewById(R.id.btnSendSMS);
 
+        // Making clickable some parts of the form
         findViewById(R.id.buttonAddEmployee).setOnClickListener(this);
         textViewViewEmployees.setOnClickListener(this);
+        textSendSms.setOnClickListener(this);
 
         // creating a database
         mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
@@ -70,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mDatabase.execSQL(insertSQL, new String[]{name, dept, joiningDate, salary});
 
             Toast.makeText(this, "Employee Added Successfully", Toast.LENGTH_SHORT).show();
+            // Resetting form fields after saving...
+            resetForm();
         }
     }
 
@@ -103,7 +108,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, EmployeeActivity.class));
 
                 break;
+
+            case R.id.btnSendSMS:
+
+                startActivity(new Intent(this, SendSMSActivity.class));
+
+                break;
         }
+    }
+
+    // Reset inputs values to blank
+    private void resetForm(){
+
+        editTextName.setText("");
+        editTextSalary.setText("");
+        spinnerDepartment.setSelection(0);
     }
 
     //this method will validate the name and salary
