@@ -12,12 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SendSMSActivity">
-            <intent-filter>
+        <activity android:name=".SendSMSActivity" />
+            <!--intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.APP_MESSAGING" />
             </intent-filter>
-        </activity>
+        </activity -->
         <activity android:name=".EmployeeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
