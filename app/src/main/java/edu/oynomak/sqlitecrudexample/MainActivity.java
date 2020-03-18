@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         spinnerDepartment = (Spinner) findViewById(R.id.spinnerDepartment);
         textSendSms = (TextView) findViewById(R.id.btnSendSMS);
 
-        // Making clickable some parts of the form
+        // Setting CLICK-able useful tools on the form
         findViewById(R.id.buttonAddEmployee).setOnClickListener(this);
         textViewViewEmployees.setOnClickListener(this);
         textSendSms.setOnClickListener(this);
@@ -67,12 +67,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     "VALUES \n" +
                     "(?, ?, ?, ?);";
 
-            //using the same method execsql for inserting values
+            //using the same method execSQL for inserting values
             //this time it has two parameters
             //first is the sql string and second is the parameters that is to be binded with the query
             mDatabase.execSQL(insertSQL, new String[]{name, dept, joiningDate, salary});
 
             Toast.makeText(this, "Employee Added Successfully", Toast.LENGTH_SHORT).show();
+
             // Resetting form fields after saving...
             resetForm();
         }
