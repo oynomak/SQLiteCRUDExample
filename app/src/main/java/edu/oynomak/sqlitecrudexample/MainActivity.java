@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static final String DATABASE_NAME = "employeedb";
 
-    TextView textViewViewEmployees, textSendSms;
+    TextView textViewViewEmployees, linkSendSMS;
     EditText editTextName, editTextSalary;
     Spinner spinnerDepartment;
 
@@ -33,12 +33,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextName = (EditText) findViewById(R.id.editTextName);
         editTextSalary = (EditText) findViewById(R.id.editTextSalary);
         spinnerDepartment = (Spinner) findViewById(R.id.spinnerDepartment);
-        textSendSms = (TextView) findViewById(R.id.btnSendSMS);
+        linkSendSMS = (TextView) findViewById(R.id.btnSendSMS);
 
         // Setting CLICK-able useful tools on the form
         findViewById(R.id.buttonAddEmployee).setOnClickListener(this);
         textViewViewEmployees.setOnClickListener(this);
-        textSendSms.setOnClickListener(this);
+        linkSendSMS.setOnClickListener(this);
 
         // creating a database
         mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btnSendSMS:
 
-                startActivity(new Intent(this, SendSMSActivity.class));
+                startActivity(new Intent(this, BonusActivity.class));
 
                 break;
         }
