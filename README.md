@@ -31,3 +31,6 @@ Send SMS functionality is added as a bonus to this example...
 ### SOURCES:
         - https://www.simplifiedcoding.net/android-sqlite-database-example/
         - https://mkyong.com/android/how-to-send-sms-message-in-android/
+        - https://www.journaldev.com/10380/android-google-maps-example-tutorial
+        - https://www.tutorialspoint.com/android/android_google_maps.htm
+        - https://www.vogella.com/tutorials/AndroidGoogleMaps/article.html
