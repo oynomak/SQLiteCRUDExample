@@ -11,6 +11,7 @@
 *.class
 
 # Generated files
+app/src/debug/
 bin/
 gen/
 out/
