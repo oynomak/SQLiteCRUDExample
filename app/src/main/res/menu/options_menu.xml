@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/sms_item" android:title="Send SMS" />
-    <item android:id="@+id/email_item" android:title="Email" />
-    <item android:id="@+id/map_item" android:title="Google Map" />
+    <item
+        android:id="@+id/sms_item"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/stat_notify_chat"
+        android:title="Send SMS" />
+    <item
+        android:id="@+id/email_item"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/sym_action_email"
+        android:title="Email" />
+    <item
+        android:id="@+id/map_item"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_mylocation"
+        android:title="Google Map" />
 
 </menu>
