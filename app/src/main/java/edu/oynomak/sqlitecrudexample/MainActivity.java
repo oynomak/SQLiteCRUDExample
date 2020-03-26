@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -45,6 +47,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Creating Employee table
         createEmployeeTable();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.options_menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.sms_item:
+
+                startActivity(new Intent(this, SendSMSActivity.class));
+
+                return true;
+
+            case R.id.email_item:
+
+                startActivity(new Intent(this, SendMailActivity.class));
+
+                return true;
+
+            case R.id.map_item:
+
+                startActivity(new Intent(this, GoogleMapsActivity.class));
+
+                return true;
+
+            default:
+
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
     //In this method we will do the create operation
